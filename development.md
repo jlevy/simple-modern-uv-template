@@ -1,9 +1,12 @@
 ## Development
 
-[Fork](https://github.com//_changeme_/fork) this
+This project is set up to use [uv](https://docs.astral.sh/uv/) to manage Python and
+dependencies. First, be sure you have uv installed.
+
+Then [fork](https://github.com/_changeme_/_changeme_/fork) this
 repo (having your own fork will make it easier to contribute),
 [check out](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository),
-and then install the package dependencies:
+the code, and install the package dependencies:
 
 ```shell
 uv sync --all-extras --dev

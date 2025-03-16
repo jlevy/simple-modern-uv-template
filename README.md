@@ -10,28 +10,24 @@ modify for your project.
 ## Installing uv and Python
 
 This project is set up to use [**uv**](https://docs.astral.sh/uv/), the new package
-manager for Python.
+manager for Python. `uv` replaces traditional use of `pyenv`, `pipx`, `poetry`, `pip`,
+etc. This is a quick cheat sheet on that:
 
-This is a quick cheat sheet for one of the simplest and most reliable ways to set up uv
-and Python.
+On macOS or Linux, if you don't have `uv` installed, a quick way to install it:
 
-For macOS, if you have [brew](https://brew.sh/) installed, it's easy to install uv:
+```shell
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+For macOS, you prefer [brew](https://brew.sh/) you can install or upgrade uv with:
 
 ```shell
 brew update
 brew install uv
 ```
 
-For Ubuntu:
-
-```shell
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-See [uv's docs](https://docs.astral.sh/uv/getting-started/installation/) for other
-platforms and installation methods.
-
-`uv` replaces traditional use of `pyenv`, `pipx`, `poetry`, `pip`, etc.
+See [uv's docs](https://docs.astral.sh/uv/getting-started/installation/) for more
+installation methods and platforms.
 
 Now you can use uv to install a current Python environment:
 

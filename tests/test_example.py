@@ -1,3 +1,3 @@
 # TODO: Add tests!
-def test_sample():
+def test_example():
     assert True

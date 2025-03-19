@@ -1,14 +1,14 @@
 # ---- Project Info and Dependencies ----
 
 [project.urls]
-Repository = "https://github.com/_changeme_/_changeme_"
+Repository = "https://github.com/changeme/changeme"
 # Homepage = "https://..."
 
 [project]
-name = "_changeme_"
-description = "_changeme_"
+name = "changeme"
+description = "changeme"
 authors = [
-    { name="_changeme_", email="_changeme_" },
+    { name="changeme", email="changeme@example.com" },
 ]
 readme = "README.md"
 license = "MIT"
@@ -29,7 +29,7 @@ dev = [
 
 [project.scripts]
 # Add script entry points here.
-# _changeme_ = "_changeme_:main"
+changeme = "changeme:main"
 
 
 # ---- Build system ----
@@ -103,15 +103,15 @@ ignore = [
 [tool.basedpyright]
 include = ["src", "tests", "devtools"]
 # Typically noisy, uncomment as needed:
+reportMissingTypeStubs = false
+reportUnusedCallResult = false
 # reportMissingImports = false
-# reportUnusedCallResult = false
 # reportUnnecessaryIsInstance = false
 # reportUnreachable = false
 # reportAny = false
 # reportExplicitAny = false
 # reportUnknownVariableType = false
 # reportUnknownArgumentType = false
-# reportMissingTypeStubs = false
 
 [tool.codespell]
 # ignore-words-list = "foo,bar"

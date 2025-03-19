@@ -1,7 +1,7 @@
 import subprocess
 
-from rich import print as rprint
 from funlog import log_calls
+from rich import print as rprint
 
 # Update as needed.
 SRC_PATHS = ["src", "tests", "devtools"]

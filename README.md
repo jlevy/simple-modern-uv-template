@@ -1,4 +1,4 @@
-# _changeme_
+# changeme
 
 \[ **☞☞☞ This is the readme for a project from the
 [simple-modern-uv](https://github.com/jlevy/simple-modern-uv) template.** Fill it in and

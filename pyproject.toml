@@ -21,9 +21,10 @@ dependencies = []
 dev = [
     "pytest>=8.3.5",
     "ruff>=0.11.0",
-    "mypy>=1.15.0",
     "codespell>=2.4.1",
     "rich>=13.9.4",
+    "basedpyright>=1.28.2",
+    "funlog>=0.2.0",
 ]
 
 [project.scripts]
@@ -95,11 +96,22 @@ ignore = [
     "ISC002", # https://docs.astral.sh/ruff/rules/multi-line-implicit-string-concatenation/
 ]
 
-
-[tool.mypy]
-disable_error_code = [
-    "import-untyped",
-]
+# BasedPyright now seems like the best type checker option, much faster than
+# mypy and has a good extension for VSCode/Cursor.
+# https://marketplace.visualstudio.com/items?itemName=detachhead.basedpyright
+# https://docs.basedpyright.com/latest/configuration/config-files/#sample-pyprojecttoml-file
+[tool.basedpyright]
+include = ["src", "tests", "devtools"]
+# Typically noisy, uncomment as needed:
+# reportMissingImports = false
+# reportUnusedCallResult = false
+# reportUnnecessaryIsInstance = false
+# reportUnreachable = false
+# reportAny = false
+# reportExplicitAny = false
+# reportUnknownVariableType = false
+# reportUnknownArgumentType = false
+# reportMissingTypeStubs = false
 
 [tool.codespell]
 # ignore-words-list = "foo,bar"

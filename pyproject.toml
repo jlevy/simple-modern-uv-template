@@ -96,13 +96,14 @@ ignore = [
     "ISC002", # https://docs.astral.sh/ruff/rules/multi-line-implicit-string-concatenation/
 ]
 
-# BasedPyright now seems like the best type checker option, much faster than
-# mypy and has a good extension for VSCode/Cursor.
+# BasedPyright currently seems like the best type checker option, much faster
+# than mypy and with a good extension for VSCode/Cursor.
 # https://marketplace.visualstudio.com/items?itemName=detachhead.basedpyright
 # https://docs.basedpyright.com/latest/configuration/config-files/#sample-pyprojecttoml-file
 [tool.basedpyright]
 include = ["src", "tests", "devtools"]
-# Typically noisy, uncomment as needed:
+
+# Typically noisy warnings, comment/uncomment as desired:
 reportMissingTypeStubs = false
 reportUnusedCallResult = false
 # reportMissingImports = false

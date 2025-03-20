@@ -25,6 +25,7 @@ dev = [
     "rich>=13.9.4",
     "basedpyright>=1.28.2",
     "funlog>=0.2.0",
+    "yamllint>=1.36.2",
 ]
 
 [project.scripts]
@@ -57,7 +58,8 @@ bump = "true"
 
 [tool.ruff]
 # Set as desired, typically 88 (black standard) or 100 (wide).
-line-length = 100
+line-length = 120
+indent-width = 4
 
 [tool.ruff.lint]
 # See: https://docs.astral.sh/ruff/rules/
@@ -113,6 +115,10 @@ reportUnusedCallResult = false
 # reportExplicitAny = false
 # reportUnknownVariableType = false
 # reportUnknownArgumentType = false
+
+[tool.yamllint]
+# https://github.com/adrienverge/yamllint
+max-line-length = 120
 
 [tool.codespell]
 # ignore-words-list = "foo,bar"

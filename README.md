@@ -1,11 +1,12 @@
 # changeme
 
-\[ **☞☞☞ This is the readme for a project from the
+👉\[\[\[**This is the initial readme for your
 [simple-modern-uv](https://github.com/jlevy/simple-modern-uv) template.** Fill it in and
 delete this message!
-Below are brief instructions on setup and development workflows that you may use or
-modify for your project.
-\]
+Below are general setup instructions that you may remove or keep and adapt for your
+project.\]\]\]
+
+* * *
 
 ## Installing uv and Python
 
@@ -35,9 +36,11 @@ Now you can use uv to install a current Python environment:
 uv python install 3.13 # Or pick another version.
 ```
 
-## Development
+## Development Workflows
 
 For development workflows, see [development.md](development.md).
+
+For instructions on publishing to PyPI, see [publishing.md](publishing.md).
 
 * * *
 

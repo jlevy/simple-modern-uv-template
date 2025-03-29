@@ -133,15 +133,10 @@ ignore = [
 # https://docs.basedpyright.com/latest/configuration/config-files/#sample-pyprojecttoml-file
 [tool.basedpyright]
 include = ["src", "tests", "devtools"]
-<<<<<<< before updating
-
-# Typically noisy warnings, comment/uncomment as desired:
-=======
 # Make ignoring type warnings easier:
 reportIgnoreCommentWithoutRule = false
 reportUnnecessaryTypeIgnoreComment = false
 # A few typically noisy warnings, comment/uncomment as desired:
->>>>>>> after updating
 reportMissingTypeStubs = false
 reportUnusedCallResult = false
 # reportMissingImports = false

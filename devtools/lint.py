@@ -25,7 +25,7 @@ def main():
     if errcount != 0:
         rprint(f"[bold red]:x: Lint failed with {errcount} errors.[/bold red]")
     else:
-        rprint("[bold green]:heavy_check_mark: Lint passed![/bold green]")
+        rprint("[bold green]:white_check_mark: Lint passed![/bold green]")
     rprint()
 
     return errcount

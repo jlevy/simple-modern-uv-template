@@ -1,5 +1,5 @@
 ---
-description: 
+description: Python Coding Guidelines
 globs: *.py,pyproject.toml
 alwaysApply: false
 ---
@@ -16,10 +16,10 @@ Always use full type annotations, generics, and other modern practices.
 
 ## Project Setup and Developer Workflows
 
-- This project has a modern pyproject.toml file and a Makefile.
-  Be sure you read and understand both.
+- Important: BE SURE you read and understand the project setup by reading the
+  pyproject.toml file and the Makefile.
 
-- Use uv for running all code and managing dependencies.
+- ALWAYS use uv for running all code and managing dependencies.
   Never use direct `pip` or `python` commands.
 
 - Use modern uv commands: `uv sync`, `uv run ...`, etc.
@@ -56,10 +56,13 @@ Always use full type annotations, generics, and other modern practices.
 - Be sure to resolve the pyright (basedpyright) linter errors as you develop and make
   changes.
 
-- If type checker errors are hard to resolve, check pyproject.toml to see if they are an
-  excessively pedantic error.
-  In special cases you may consider disabling it globally it in pyproject.toml but you
-  *must ask for confirmation* from the user before doing this.
+- If type checker errors are hard to resolve, you may add a comment `# pyright: ignore`
+  to disable Pyright warnings or errors but ONLY if you know they are not a real problem
+  and are difficult to fix.
+
+- In special cases you may consider disabling it globally it in pyproject.toml but YOU
+  MUST ASK FOR CONFIRMATION from the user before globally disabling lint or type checker
+  rules.
 
 - Never change an existing comment, pydoc, or a log statement, unless it is directly
   fixing the issue you are changing, or the user has asked you to clean up the code.
@@ -106,6 +109,11 @@ Always use full type annotations, generics, and other modern practices.
   x is 5`. That is redundant.
   Just write `assert x == 5`.
 
+- NEVER write `assert False`. If a test reaches an unexpected branch and must fail
+  explicitly, `raise AssertionError("Explanation")` instead.
+  This is best typical best practice in Python since assertions can be removed with
+  optimization.
+
 - Don't use pytest fixtures like parameterized tests or expected exception decorators
   unless absolutely necessary in more complex tests.
   It is often far simpler to use simple assertions and put the checks inside the test.
@@ -140,6 +148,22 @@ Always use full type annotations, generics, and other modern practices.
     video = "video"
     webpage = "webpage"
     binary = "binary"
+  ```
+
+## Guidelines for Formatting Literal strings
+
+- For multi-line strings NEVER put multi-line strings flush against the left margin.
+  ALWAYS use a `dedent()` function to make it more readable.
+  You may wish to add a `strip()` as well.
+  Example:
+  ```python
+  from textwrap import dedent
+  markdown_content = dedent("""
+      # Title 1
+      Some text.
+      ## Subtitle 1.1
+      More text.
+      """).strip()
   ```
 
 ## Guidelines for Docstrings
@@ -183,8 +207,9 @@ Always use full type annotations, generics, and other modern practices.
 - Docstrings *should* mention any key rationale or pitfalls when using the class or
   function.
 
-- Don't add pydocs that just repeat information obvious from the function, variable
-  names, or concise description.
+- Avoid obvious or repetitive docstrings.
+  Do NOT add pydocs that just repeat in English facts that are obvious from the function
+  name, variable name, or types.
   That is silly and obvious and makes the code longer for no reason.
 
 - Do NOT list args and return values if they're obvious.
@@ -197,3 +222,14 @@ Always use full type annotations, generics, and other modern practices.
   Internal/local variables, functions, and methods DO NOT need docstrings unless their
   purpose is not obvious.
 
+## General Clean Coding Practices
+
+- Avoid writing trivial wrapper functions.
+  For example, when writing a class DO NOT blindly make delegation methods around public
+  member variables. DO NOT write methods like this:
+  ```python
+      def reassemble(self) -> str:
+        """Call the original reassemble method."""
+        return self.paragraph.reassemble()
+  ```
+  In general, the user can just call the enclosed objects methods, reducing code bloat.

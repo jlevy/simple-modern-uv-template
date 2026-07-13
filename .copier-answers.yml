@@ -1,9 +1,11 @@
 # Changes here will be overwritten by Copier. Do not edit manually.
-_commit: v0.2.27
+_commit: v0.3.0-10-g69266fb
 _src_path: gh:jlevy/simple-modern-uv
 package_author_email: changeme@example.com
 package_author_name: changeme
 package_description: changeme
 package_github_org: changeme
+package_license: MIT
 package_module: changeme
 package_name: changeme
+publish_to_pypi: true
